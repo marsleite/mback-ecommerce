@@ -24,11 +24,11 @@ abstract class IntegrationTest {
     @Autowired
     lateinit var webTestClient: WebTestClient
 
-//    @BeforeEach
-//    fun setupDatabase() {
-//        val script = ClassPathResource("initialize.sql").inputStream.bufferedReader().use { it.readText() }
-//        entityTemplate.databaseClient.sql(script).then().block()
-//    }
+    @BeforeEach
+    fun setupDatabase() {
+        val script = ClassPathResource("initialize.sql").inputStream.bufferedReader().use { it.readText() }
+        entityTemplate.databaseClient.sql(script).then().block()
+    }
 
     @AfterEach
     fun tearDown() {

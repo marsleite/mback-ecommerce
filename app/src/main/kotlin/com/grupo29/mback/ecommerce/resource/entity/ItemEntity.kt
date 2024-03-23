@@ -1,13 +1,13 @@
 package com.grupo29.mback.ecommerce.resource.entity
 
-//import com.grupo29.mback.ecommerce.application.config.IdGenerator
+import com.grupo29.mback.ecommerce.application.config.IdGenerator
 import com.grupo29.mback.ecommerce.model.Item
 import org.springframework.data.annotation.Id
 import org.springframework.data.domain.Persistable
 import org.springframework.data.relational.core.mapping.Table
 
 
-@Table("item")
+@Table("products")
 data class ItemEntity(
     @Id
     private var skuId: String? = null,
@@ -36,8 +36,7 @@ data class ItemEntity(
     )
 
     override fun getId(): String {
-//        skuId = skuId ?: IdGenerator.tsid()
-//        return skuId!!
+        skuId = skuId ?: IdGenerator.tsid()
         return skuId!!
     }
     override fun isNew(): Boolean = skuId == null

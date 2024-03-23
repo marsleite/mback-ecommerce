@@ -12,16 +12,19 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
 @ExperimentalCoroutinesApi
-class ItemRepositoryGatewayImplTest: IntegrationTest() {
+class ItemRepositoryGatewayImplTest(
+    @Autowired private val itemRepositoryGateway: ItemRepositoryGateway,
+    @Autowired private val itemRepositorySpring: ItemRepositorySpring
+): IntegrationTest() {
 
     @Test
     fun `create item with success`() = runTest {
         val item = ItemBuilder.build()
         val userId = "1234345"
-//        val response = itemRepositoryGateway.addItem(item, userId)
-//
-//        val findItem = itemRepositorySpring.findById(response.skuId!!)
-//
-//        Assertions.assertEquals(findItem?.name, response.name)
+        val response = itemRepositoryGateway.addItem(item, userId)
+
+        val findItem = itemRepositorySpring.findById(response.skuId!!)
+
+        Assertions.assertEquals(findItem?.name, response.name)
     }
 }

@@ -9,10 +9,9 @@ apply(plugin = "project-report")
 dependencies {
     implementation(project(":domain"))
 
-    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:2.5.4")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.2.0")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("io.asyncer:r2dbc-mysql:1.0.5")
-    implementation("org.springframework.data:spring-data-commons:3.1.7")
     implementation("commons-beanutils:commons-beanutils:1.9.4")
     implementation("io.github.microutils:kotlin-logging-jvm:2.0.10")
     implementation("com.github.f4b6a3:tsid-creator:5.2.5")
@@ -26,8 +25,8 @@ dependencies {
 
     runtimeOnly("mysql:mysql-connector-java:8.0.33")
 
-    testRuntimeOnly("com.h2database:h2")
-    testRuntimeOnly("io.r2dbc:r2dbc-h2")
+    testRuntimeOnly("com.h2database:h2:2.2.224")
+    testRuntimeOnly("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")
 
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock:4.1.0")
