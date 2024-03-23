@@ -18,7 +18,7 @@ allprojects {
     }
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_17
     }
 }
 
@@ -54,7 +54,7 @@ subprojects {
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs += "-Xjsr305=strict"
-            jvmTarget = "21"
+            jvmTarget = "17"
         }
     }
 
