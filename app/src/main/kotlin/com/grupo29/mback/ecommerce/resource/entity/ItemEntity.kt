@@ -7,7 +7,7 @@ import org.springframework.data.domain.Persistable
 import org.springframework.data.relational.core.mapping.Table
 
 
-@Table("products")
+@Table("item")
 data class ItemEntity(
     @Id
     private var skuId: String? = null,
