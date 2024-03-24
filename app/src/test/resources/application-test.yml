@@ -1,3 +1,8 @@
 spring:
   r2dbc:
     url: r2dbc:h2:mem:///testdb;mode=mysql
+
+api:
+  internal:
+    uri: http://localhost:8080
+    mback-user: /mback/user/{userId}
