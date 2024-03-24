@@ -51,7 +51,7 @@ class MbackUserGatewayHTTPTest: IntegrationTest() {
 
     //when
     WireMock.stubFor(
-      WireMock.get(WireMock.urlPathEqualTo("/mback/user/$userId"))
+      WireMock.get(WireMock.urlPathEqualTo("/api/users/$userId"))
         .willReturn(
           WireMock.aResponse().withStatus(HttpStatus.BAD_REQUEST.value())
             .withHeader("Content-Type", "application/json")
@@ -77,7 +77,7 @@ class MbackUserGatewayHTTPTest: IntegrationTest() {
 
     //when
     WireMock.stubFor(
-      WireMock.get(WireMock.urlPathEqualTo("/mback/user/$userId"))
+      WireMock.get(WireMock.urlPathEqualTo("/api/users$userId"))
         .willReturn(
           WireMock.aResponse().withStatus(HttpStatus.INTERNAL_SERVER_ERROR.value())
             .withHeader("Content-Type", "application/json")
