@@ -4,6 +4,10 @@
 
 This project is a Spring Boot application written in Kotlin and Java. It uses SQL for data persistence and Gradle for build and dependency management.
 
+## Other Projects in the service
+- mback-user: https://github.com/marsleite/mback-user
+- mback-payment: https://github.com/marsleite/mback-payment
+
 ## Technologies
 
 - Kotlin
@@ -39,11 +43,15 @@ This project is a Spring Boot application written in Kotlin and Java. It uses SQ
 
 ----------------
 
-# Microservices Backend Project Ecommerce (portuguese
+# Microservices Backend Project Ecommerce (portuguese)
 
 ## Descrição
 
 Este projeto é uma aplicação Spring Boot escrita em Kotlin e Java. Ele usa SQL para persistência de dados e Gradle para gerenciamento de build e dependências.
+
+## Outros Projetos no serviço
+- mback-user: https://github.com/marsleite/mback-user
+- mback-payment: https://github.com/marsleite/mback-payment
 
 ## Tecnologias
 
