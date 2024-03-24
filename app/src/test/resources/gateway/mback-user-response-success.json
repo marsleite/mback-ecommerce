@@ -1,0 +1,12 @@
+{
+  "nome": "João Maria",
+  "email": "teste@teste.com",
+  "senha": "12345",
+  "tipo": "VENDEDOR",
+  "endereco": {
+    "rua": "Rua sem saida",
+    "cidade": "Sao Paulo",
+    "estado": "Sao Paulo",
+    "cep": "31750-166"
+  }
+}

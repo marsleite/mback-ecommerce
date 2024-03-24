@@ -14,4 +14,6 @@ interface ItemRepositoryGateway {
     suspend fun updateItem(item: Item, userId: String): Item
 
     suspend fun deleteItem(skuId: String)
+
+    suspend fun getItemsByUserId(userId: String): Flow<Item>
 }

@@ -1,0 +1,5 @@
+api:
+  internal:
+    uri: http://localhost:8087
+    mback-user: /mback/user/{userId}
+    mback-payment: /mback/pagamento

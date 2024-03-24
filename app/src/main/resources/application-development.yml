@@ -1,0 +1,4 @@
+api:
+  internal:
+    uri: http://internal.mback.com
+    mback-user: /mback/user/{userId}

@@ -17,16 +17,16 @@ data class CartEntity(
     val items: String,
     val total: Double
 ): Persistable<String> {
-    constructor(userId: String, items: List<Item>) : this(
+    constructor(userId: String, items: List<Item>, mapper: ObjectMapper) : this(
         userId = userId,
-        items = ObjectMapper().registerModule(KotlinModule()).writeValueAsString(items),
+        items = mapper.writeValueAsString(items),
         total = items.sumOf<Item> { it.price }
     )
 
-    fun toDomain() = Cart(
+    fun toDomain(mapper: ObjectMapper) = Cart(
         id = id!!,
         userId = userId,
-        items = ObjectMapper().registerModule(KotlinModule()).readValue(items, Array<Item>::class.java).toList(),
+        items = mapper.readValue(items, Array<Item>::class.java).toList(),
         total = total
     )
 

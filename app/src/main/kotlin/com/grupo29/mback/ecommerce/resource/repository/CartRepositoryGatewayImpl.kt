@@ -1,5 +1,6 @@
 package com.grupo29.mback.ecommerce.resource.repository
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.grupo29.mback.ecommerce.exception.RepositoryException
 import com.grupo29.mback.ecommerce.exception.TypeException
 import com.grupo29.mback.ecommerce.gateway.CartRepositoryGateway
@@ -12,14 +13,15 @@ import org.springframework.stereotype.Component
 
 @Component
 class CartRepositoryGatewayImpl(
-    private val cartRepositorySpring: CartRepositorySpring
+    private val cartRepositorySpring: CartRepositorySpring,
+    private val mapper: ObjectMapper
 ) : CartRepositoryGateway {
     override suspend fun addCart(userId: String, items: List<Item>): Cart{
-        return cartRepositorySpring.save(CartEntity(userId, items)).toDomain()
+        return cartRepositorySpring.save(CartEntity(userId, items, mapper)).toDomain(mapper)
     }
 
     override suspend fun findByUserId(userId: String): Cart? {
-        return cartRepositorySpring.findByUserId(userId)?.toDomain()
+        return cartRepositorySpring.findByUserId(userId)?.toDomain(mapper)
             ?: throw RepositoryException("Cart not found", TypeException.CART_NOT_FOUND.name)
     }
 

@@ -47,4 +47,8 @@ class ItemRepositoryGatewayImpl(
     override suspend fun deleteItem(skuId: String) {
         itemRepositorySpring.deleteById(skuId)
     }
+
+    override suspend fun getItemsByUserId(userId: String): Flow<Item> {
+        return itemRepositorySpring.findAllByUserId(userId).map { it.toDomain() }
+    }
 }
