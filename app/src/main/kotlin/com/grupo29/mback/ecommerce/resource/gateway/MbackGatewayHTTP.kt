@@ -4,7 +4,7 @@ import com.grupo29.mback.ecommerce.application.config.ApiConfig
 import com.grupo29.mback.ecommerce.application.dto.MbackUserRequest
 import com.grupo29.mback.ecommerce.exception.ClientException
 import com.grupo29.mback.ecommerce.exception.TypeException
-import com.grupo29.mback.ecommerce.gateway.MbackGateway
+import com.grupo29.mback.ecommerce.gateway.MbackUserGateway
 import com.grupo29.mback.ecommerce.model.MbackUser
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
@@ -18,7 +18,7 @@ private const val SERVER_MESSAGE_ERROR = "internal server error, try later again
 class MbackGatewayHTTP(
     private val webClient: WebClient,
     private val apiConfig: ApiConfig
-): MbackGateway {
+): MbackUserGateway {
     override suspend fun getMbackUser(userId: String): MbackUser {
       return webClient.get()
           .uri { path ->

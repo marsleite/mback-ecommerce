@@ -21,6 +21,9 @@ dependencies {
     implementation("io.github.resilience4j:resilience4j-kotlin:2.1.0")
     // ##
 
+    // #### MESSAGE
+    implementation("org.springframework.boot:spring-boot-starter-amqp")
+
     implementation("org.apache.commons:commons-text:1.11.0")
 
     runtimeOnly("mysql:mysql-connector-java:8.0.33")

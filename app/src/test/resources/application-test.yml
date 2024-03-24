@@ -1,8 +1,14 @@
 spring:
   r2dbc:
     url: r2dbc:h2:mem:///testdb;mode=mysql
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 api:
   internal:
     uri: http://localhost:8087
     mback-user: /mback/user/{userId}
+    mback-payment: /mback/pagamento

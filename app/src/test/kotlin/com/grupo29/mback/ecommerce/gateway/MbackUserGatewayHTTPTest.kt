@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 
 @ExperimentalCoroutinesApi
-class MbackGatewayHTTPTest: IntegrationTest() {
+class MbackUserGatewayHTTPTest: IntegrationTest() {
 
   @Autowired
   lateinit var target: MbackGatewayHTTP
