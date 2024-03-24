@@ -10,4 +10,6 @@ class FindItemsUseCase(
     suspend fun getAllItems() = itemRepository.getItems()
 
     suspend fun getItem(skuId: String) = itemRepository.getItem(skuId)
+
+    suspend fun getAllItemsByUserId(userId: String) = itemRepository.getItemsByUserId(userId)
 }
