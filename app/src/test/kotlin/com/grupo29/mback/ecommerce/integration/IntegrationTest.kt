@@ -15,7 +15,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
-@AutoConfigureWireMock(port = 0)
+@AutoConfigureWireMock(port = 8087)
 abstract class IntegrationTest {
 
     @Autowired
@@ -34,5 +34,12 @@ abstract class IntegrationTest {
     fun tearDown() {
         WireMock.resetAllRequests()
         entityTemplate.databaseClient.sql("DROP ALL OBJECTS").then().block()
+    }
+
+    companion object {
+        fun readFileResponseJson(jsonFIlePath: String): String {
+            val jsonStream = this::class.java.classLoader.getResourceAsStream(jsonFIlePath)
+            return jsonStream?.bufferedReader().use { it!!.readText() }
+        }
     }
 }
